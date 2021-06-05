@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main() {
   cout << "Hello World!";
  string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
