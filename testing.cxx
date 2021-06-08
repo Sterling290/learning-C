@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
+
 using namespace std;
 
 int hours = 0;
@@ -13,14 +14,15 @@ void displayClock()
 {
     // system call to clear the screen
     system("clear");
+    system('clr');  
     
-    cout << setfill(' ') << setw(55) << "         TIMER         \n" << flush;
-    cout << setfill(' ') << setw(55) << " --------------------------\n"<< flush;
+    cout << setfill(' ') << setw(55) << "         TIMER         \n" ;
+    cout << setfill(' ') << setw(55) << " --------------------------\n";
     cout << setfill(' ') << setw(29);
-    cout << "| " << setfill('0') << setw(2) << hours << " hrs | "<< flush;
-    cout << setfill('0') << setw(2) << minutes << " min | "<< flush;
+    cout << "| " << setfill('0') << setw(2) << hours << " hrs | ";
+    cout << setfill('0') << setw(2) << minutes << " min | ";
     cout << setfill('0') << setw(2) << seconds << " sec |" << endl;
-    cout << setfill(' ') << setw(55) << " --------------------------\n"<< flush;
+    cout << setfill(' ') << setw(55) << " --------------------------\n";
     system ("CLS");
 }
   
