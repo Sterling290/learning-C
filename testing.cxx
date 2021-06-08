@@ -13,7 +13,7 @@ void displayClock()
 {
     // system call to clear the screen
     system("clear");
-  
+    
     cout << setfill(' ') << setw(55) << "         TIMER         \n";
     cout << setfill(' ') << setw(55) << " --------------------------\n";
     cout << setfill(' ') << setw(29);
@@ -21,6 +21,7 @@ void displayClock()
     cout << setfill('0') << setw(2) << minutes << " min | ";
     cout << setfill('0') << setw(2) << seconds << " sec |" << endl;
     cout << setfill(' ') << setw(55) << " --------------------------\n";
+    system ("CLS");
 }
   
 void timer()
@@ -42,7 +43,7 @@ void timer()
         seconds++;
   
         // if seconds reaches 60
-        if (seconds == 10) {
+        if (seconds == 11) {
           return ;
             // increment minutes
             cout << "done";  
