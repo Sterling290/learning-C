@@ -42,20 +42,10 @@ void timer()
         seconds++;
   
         // if seconds reaches 60
-        if (seconds == 60) {
+        if (seconds == 10) {
           return ;
             // increment minutes
-            cout << "done";
-            
-  
-            // if minutes reaches 60
-            if (minutes == 60) {
-          
-                // increment hours
-                hours++;
-                minutes = 0;
-            }
-            seconds = 0;
+            cout << "done";  
         }
     }
 }
