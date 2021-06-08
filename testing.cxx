@@ -14,7 +14,7 @@ void displayClock()
 {
     // system call to clear the screen
     system("clear");
-    system('clr');  
+    system("clr");  
     
     cout << setfill(' ') << setw(55) << "         TIMER         \n" ;
     cout << setfill(' ') << setw(55) << " --------------------------\n";
