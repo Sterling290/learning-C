@@ -46,7 +46,7 @@ void timer()
           
             // increment minutes
             cout << "done";
-            return
+            
   
             // if minutes reaches 60
             if (minutes == 60) {
