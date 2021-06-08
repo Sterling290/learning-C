@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
-#include <curses.h>
+#include <term.h>
 
 using namespace std;
 
@@ -15,7 +15,9 @@ void displayClock()
 {
     // system call to clear the screen
     system("clear");
-     refresh(); 
+    //<term.h clear
+  putp( tigetstr( "clear" ) );
+  
     
     cout << setfill(' ') << setw(55) << "         TIMER         \n" ;
     cout << setfill(' ') << setw(55) << " --------------------------\n";
