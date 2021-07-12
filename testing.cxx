@@ -7,6 +7,10 @@
 #include <unistd.h>
 #include <limits>
 #include <string>
+#include <random>       
+#include <chrono> 
+#include <algorithm>  
+#include <array>  
 
 using namespace std;
 int coolz = 0;
@@ -14,11 +18,16 @@ int hours = 0;
 int minutes = 0;
 int seconds = 0;
 string trying =  "\x1B[31mTexting\033[0m\t\t";
-string array1[5] = {"|","0","0","0","|"};
-string array2[5] = {"|","0","0","0","|"};
-string array3[5] = {"|","0","0","0","|"};
-string array4[5] = {"|","0","0","0","|"};
-string array5[5] = {"|","0","x","0","|"};
+array<string,5>array1 = {"|","0","0","0","|"};
+array<string,5>array2 = {"|","0","0","0","|"};
+array<string,5>array3 = {"|","0","0","0","|"};
+array<string,5>array4 = {"|","0","0","0","|"};
+array<string,5>array5 = {"|","0","0","0","|"};
+ //std::array<int,5> array1 = {1,2,3,4,5};
+// string array2[5] = {"|","0","0","0","|"};
+// string array3[5] = {"|","0","0","0","|"};
+// string array4[5] = {"|","0","0","0","|"};
+// string array5[5] = {"|","0","x","0","|"};
 
   
 // function to display the timer
@@ -27,12 +36,20 @@ void displayClock()
     //HANDLE hConsole = GetStdHandle("STD_OUTPUT_HANDLE");
     // system call to clear the screen
     system("clear");
+    array5 = array4;
+    array4 = array3;
+    array3 = array2;
+    array2 = array1;
+    if(seconds%2 == 0){
+      shuffle (array1.begin(), array1.end(), std::default_random_engine(seconds));
+    };
+
     //system("Color 1A");
   //SetConsoleTextAttribute(hConsole, 2);
     cout << string(15, '\n');
     cout.width(10);
      std::cout << "Hello, what is your name?" << std::endl;
-     //cout << setfill(' ') << setw(55) <<"         TIMER         \n";
+     cout << setfill(' ') << setw(55) <<"         Road Fighter         \n";
         cout << setfill(' ') << setw(55) << "--------------------------\n";
     cout << setfill(' ') << setw(29);
     cout << "| " << setfill('0') << setw(2) << hours << " hrs | ";
@@ -63,7 +80,7 @@ void timer()
         // increment seconds
         seconds++;
         // if seconds reaches 11
-        if (seconds == 11) {
+        if (seconds == 59) {
             cout << trying;  
           return ;
             // increment minutes
